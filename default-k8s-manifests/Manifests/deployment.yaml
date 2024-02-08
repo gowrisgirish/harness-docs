@@ -21,4 +21,4 @@ spec:
         - containerPort: 80
         env:
         - name: DATE
-          value: {{.Values.harnessValues.env}}
+          value: '{{.Values.harnessValues.env}}'
