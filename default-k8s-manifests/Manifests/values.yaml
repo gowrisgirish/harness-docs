@@ -1,2 +1,2 @@
 image: <+artifacts.primary.image>
-env: <+stage.variables.date>
+env: '<+stage.variables.date>'
