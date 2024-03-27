@@ -1,7 +1,17 @@
 environment:
   name: Env-from-scm
   identifier: Envfromscm
-  accountId: oTpA7kjUT5e6MDtGU5qmOA
+  type: PreProduction
   orgIdentifier: Customer_Experience
   projectIdentifier: Labs
-  type: PreProduction
+  variables:
+    - name: testvar1
+      type: String
+      value: val1
+      description: ""
+      required: false
+    - name: testvar2
+      type: String
+      value: val2
+      description: ""
+      required: false
