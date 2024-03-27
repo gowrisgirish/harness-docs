@@ -1,0 +1,7 @@
+environment:
+  name: Env-from-scm
+  identifier: Envfromscm
+  accountId: oTpA7kjUT5e6MDtGU5qmOA
+  orgIdentifier: Customer_Experience
+  projectIdentifier: Labs
+  type: PreProduction
