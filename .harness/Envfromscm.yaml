@@ -12,6 +12,6 @@ environment:
       required: false
     - name: testvar2
       type: String
-      value: val2
+      value: val02
       description: ""
       required: false
