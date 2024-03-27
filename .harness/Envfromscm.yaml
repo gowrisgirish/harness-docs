@@ -15,3 +15,8 @@ environment:
       value: val02
       description: ""
       required: false
+    - name: testvar3
+      type: String
+      value: var3
+      description: ""
+      required: false
