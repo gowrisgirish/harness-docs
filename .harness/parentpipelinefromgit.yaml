@@ -1,0 +1,18 @@
+pipeline:
+  name: parent-pipeline-from-git
+  identifier: parentpipelinefromgit
+  projectIdentifier: Labs
+  orgIdentifier: Customer_Experience
+  tags: {}
+  stages:
+    - stage:
+        name: test
+        identifier: test
+        description: ""
+        type: Pipeline
+        spec:
+          org: Customer_Experience
+          pipeline: pipelinefromgit
+          project: Labs
+          inputs: {}
+        tags: {}
