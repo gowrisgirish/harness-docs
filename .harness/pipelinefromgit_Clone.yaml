@@ -1,0 +1,23 @@
+---
+pipeline:
+  projectIdentifier: "Labs"
+  orgIdentifier: "Customer_Experience"
+  tags: {}
+  stages:
+  - stage:
+      name: "wait"
+      identifier: "wait"
+      description: ""
+      type: "Custom"
+      spec:
+        execution:
+          steps:
+          - step:
+              type: "Wait"
+              name: "Wait_1"
+              identifier: "Wait_1"
+              spec:
+                duration: "10m"
+      tags: {}
+  identifier: "pipelinefromgit_Clone"
+  name: "pipeline-from-git - Clone"
