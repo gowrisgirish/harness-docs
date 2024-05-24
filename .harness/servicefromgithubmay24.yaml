@@ -1,0 +1,5 @@
+service:
+  name: servicefromgithubmay24
+  identifier: servicefromgithubmay24
+  orgIdentifier: Customer_Experience
+  projectIdentifier: Labs
