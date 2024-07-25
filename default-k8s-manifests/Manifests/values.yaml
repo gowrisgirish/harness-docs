@@ -1,4 +1,5 @@
 image: <+artifacts.primary.image>
+imagesource: 
 imagepath: <+artifacts.primary.imagePath>
 tag: <+artifacts.primary.tag>
 harnessValues:
