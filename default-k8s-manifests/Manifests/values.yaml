@@ -1,3 +1,5 @@
 image: <+artifacts.primary.image>
+imagepath: <+artifacts.primary.imagePath>
+tag: <+artifacts.primary.tag>
 harnessValues:
     env: "<+stage.variables.date>"
