@@ -1,5 +1,6 @@
 image: <+artifacts.primary.image>
 imagesource: index.docker.io
+imagepath1: index.docker.io/<+artifacts.primary.imagePath>
 imagepath: <+artifacts.primary.imagePath>
 tag: <+artifacts.primary.tag>
 harnessValues:
