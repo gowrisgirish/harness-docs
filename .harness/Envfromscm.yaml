@@ -2,6 +2,6 @@ environment:
   name: Env-from-scm
   identifier: Envfromscm
   tags: {}
-  type: PreProduction
+  type: Production
   orgIdentifier: Customer_Experience
   projectIdentifier: Labs
