@@ -1,22 +1,7 @@
 environment:
   name: Env-from-scm
   identifier: Envfromscm
-  type: PreProduction
+  tags: {}
+  type: Production
   orgIdentifier: Customer_Experience
   projectIdentifier: Labs
-  variables:
-    - name: testvar1
-      type: String
-      value: val1
-      description: ""
-      required: false
-    - name: testvar2
-      type: String
-      value: val02
-      description: ""
-      required: false
-    - name: testvar3
-      type: String
-      value: var2
-      description: ""
-      required: false
