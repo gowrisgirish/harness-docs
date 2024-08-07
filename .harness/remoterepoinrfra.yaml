@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: remote-repo-inrfra
+  identifier: remoterepoinrfra
+  orgIdentifier: Customer_Experience
+  projectIdentifier: Labs
+  environmentRef: envingithub
+  deploymentType: Kubernetes
+  type: KubernetesDirect
+  spec:
+    connectorRef: labk8sconnector
+    namespace: gowri
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+  allowSimultaneousDeployments: false
