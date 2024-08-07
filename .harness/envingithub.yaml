@@ -1,0 +1,6 @@
+environment:
+  name: envingithub
+  identifier: envingithub
+  orgIdentifier: Customer_Experience
+  projectIdentifier: Labs
+  type: PreProduction
