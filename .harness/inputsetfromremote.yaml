@@ -1,0 +1,22 @@
+pipeline:
+  name: input-set-from-remote
+  identifier: inputsetfromremote
+  projectIdentifier: Labs
+  orgIdentifier: Customer_Experience
+  tags: {}
+  stages:
+    - stage:
+        name: testing
+        identifier: testing
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: Wait
+                  name: Wait_1
+                  identifier: Wait_1
+                  spec:
+                    duration: <+input>
+        tags: {}
