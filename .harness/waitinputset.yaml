@@ -1,5 +1,6 @@
 inputSet:
   name: wait-inputset
+  tags: {}
   identifier: waitinputset
   orgIdentifier: Customer_Experience
   projectIdentifier: Labs
@@ -16,4 +17,4 @@ inputSet:
                     identifier: Wait_1
                     type: Wait
                     spec:
-                      duration: 1s
+                      duration: 2s
