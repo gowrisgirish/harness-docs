@@ -22,7 +22,7 @@ spec:
         env:
            {{- range $key, $val := .Values.env }}
             - name: {{ $key }}
-              value: '{{ $val }}'
+              value: {{ $val }}
             {{- end }}
         #- name: DATE
         #  value: '{{.Values.harnessValues.env}}'
