@@ -6,7 +6,7 @@ tag: <+artifacts.primary.tag>
 harnessValues:
     env: "<+stage.variables.date>"
     CLOUDABILITY_IMAGE: "<+artifacts.primary.image>"
-    CLOUDABILITY_API_KEY: '<+secrets.getValue("hashicorpvault://appttco_hehv_p/TTCO/non-prod/cloudability-api-key#cloudability-api-key")' #Gzh5K9lsnVaTUgNkPbitg8XX22aiFdHzz3HQ1iM3
+    #CLOUDABILITY_API_KEY: '<+secrets.getValue("hashicorpvault://appttco_hehv_p/TTCO/non-prod/cloudability-api-key#cloudability-api-key")' #Gzh5K9lsnVaTUgNkPbitg8XX22aiFdHzz3HQ1iM3
     CLOUDABILITY_CLUSTER_NAME: "<+infra.namespace>"
     cloudabilityimage: "<+artifacts.primary.image>"
     CLOUDABILITY_POLL_INTERVAL: 180
