@@ -20,7 +20,7 @@ spec:
         ports:
         - containerPort: 80
         env:
-           {{- range $key, $val := .Values.harnessValues }}
+           {{- range $key, $val := .Values.env }}
             - name: {{ $key }}
               value: {{ $val }}
             {{- end }}
