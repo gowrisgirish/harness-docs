@@ -20,9 +20,11 @@ spec:
         ports:
         - containerPort: 80
         env:
-           {{- range $key, $val := .Values.env }}
-            - name: {{ $key }}
-              value: {{ $val }}
-            {{- end }}
+           # {{- range $key, $val := .Values.env }}
+           #  - name: {{ $key }}
+           #    value: {{ $val }}
+           #  {{- end }}
+         - name: CLOUDABILITY_CLUSTER_NAME
+           value: {{.Values.env.CLOUDABILITY_CLUSTER_NAME}}
         #- name: DATE
         #  value: '{{.Values.harnessValues.env}}'
