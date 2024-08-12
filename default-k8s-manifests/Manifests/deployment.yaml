@@ -20,17 +20,17 @@ spec:
         ports:
         - containerPort: 80
         env:
-           # {{- range $key, $val := .Values.env }}
-           #  - name: {{ $key }}
-           #    value: {{ $val }}
-           #  {{- end }}
-        - name: CLOUDABILITY_CLUSTER_NAME
-          value: {{.Values.env.CLOUDABILITY_CLUSTER_NAME}}
-        - name: CLOUDABILITY_IMAGE
-          value: {{.Values.env.CLOUDABILITY_IMAGE}}
-        - name: cloudabilityimage
-          value: {{.Values.env.cloudabilityimage}}
-        - name: DATE
-          value: '{{.Values.harnessValues.env}}'
-        - name: CLOUDABILITY_IMAGE1
-          value: '{{.Values.harnessValues.cloudabilityimage1}}'
+           {{- range $key, $val := .Values.harnessValues }}
+            - name: {{ $key }}
+              value: {{ $val }}
+            {{- end }}
+        # - name: CLOUDABILITY_CLUSTER_NAME
+        #   value: {{.Values.env.CLOUDABILITY_CLUSTER_NAME}}
+        # - name: CLOUDABILITY_IMAGE
+        #   value: {{.Values.env.CLOUDABILITY_IMAGE}}
+        # - name: cloudabilityimage
+        #   value: {{.Values.env.cloudabilityimage}}
+        # - name: DATE
+        #   value: '{{.Values.harnessValues.env}}'
+        # - name: CLOUDABILITY_IMAGE1
+        #   value: '{{.Values.harnessValues.cloudabilityimage1}}'
