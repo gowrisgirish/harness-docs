@@ -32,3 +32,5 @@ spec:
           value: {{.Values.env.cloudabilityimage}}
         - name: DATE
           value: '{{.Values.harnessValues.env}}'
+        - name: DATE
+          value: '{{.Values.harnessValues.cloudabilityimage1}}'
