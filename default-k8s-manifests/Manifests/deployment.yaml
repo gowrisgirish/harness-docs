@@ -24,6 +24,5 @@ spec:
             - name: {{ $key }}
               value: {{ $val }}
             {{- end }}
-          {{- end }}
         #- name: DATE
         #  value: '{{.Values.harnessValues.env}}'
