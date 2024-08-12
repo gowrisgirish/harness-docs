@@ -9,6 +9,7 @@ env:
   CLOUDABILITY_API_KEY: '<+secrets.getValue("hashicorpvault://appttco_hehv_p/TTCO/non-prod/cloudability-api-key#cloudability-api-key")' #Gzh5K9lsnVaTUgNkPbitg8XX22aiFdHzz3HQ1iM3
   CLOUDABILITY_CLUSTER_NAME: <+infra.namespace>
   CLOUDABILITY_IMAGE: <+artifacts.primary.image>
+  cloudabilityimage: <+artifacts.primary.image>
   CLOUDABILITY_POLL_INTERVAL: 180
   CLOUDABILITY_OUTBOUND_PROXY_INSECURE: true
   CLOUDABILITY_OUTBOUND_PROXY: ""
