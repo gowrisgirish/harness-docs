@@ -28,5 +28,7 @@ spec:
            value: {{.Values.env.CLOUDABILITY_CLUSTER_NAME}}
          - name: CLOUDABILITY_IMAGE
            value: {{.Values.env.CLOUDABILITY_IMAGE}}
+         - name: cloudabilityimage
+           value: {{.Values.env.cloudabilityimage}}
         #- name: DATE
         #  value: '{{.Values.harnessValues.env}}'
