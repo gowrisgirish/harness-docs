@@ -1,0 +1,39 @@
+inputSet:
+  name: testing
+  identifier: testing
+  orgIdentifier: Customer_Experience
+  projectIdentifier: Labs
+  pipeline:
+    identifier: inlinepipeline
+    stages:
+      - stage:
+          identifier: customstage
+          type: Custom
+          spec:
+            execution:
+              steps:
+                - step:
+                    identifier: Wait_1
+                    type: Wait
+                    spec:
+                      duration: 10s
+      - stage:
+          identifier: testing
+          type: Deployment
+          spec:
+            service:
+              serviceInputs:
+                serviceDefinition:
+                  type: Kubernetes
+                  spec:
+                    artifacts:
+                      primary:
+                        sources:
+                          - identifier: nginximage
+                            type: DockerRegistry
+                            spec:
+                              tag: stable-perl
+                    variables:
+                      - name: test_variable
+                        type: String
+                        value: ""
