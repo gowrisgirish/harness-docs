@@ -1,0 +1,19 @@
+inputSet:
+  name: inputset
+  identifier: inputset
+  orgIdentifier: Customer_Experience
+  projectIdentifier: Labs
+  pipeline:
+    identifier: pipelinefromgit
+    stages:
+      - stage:
+          identifier: wait
+          type: Custom
+          spec:
+            execution:
+              steps:
+                - step:
+                    identifier: Wait_1
+                    type: Wait
+                    spec:
+                      duration: 10s
