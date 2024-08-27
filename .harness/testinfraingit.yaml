@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: testinfraingit
+  identifier: testinfraingit
+  orgIdentifier: Customer_Experience
+  projectIdentifier: Labs
+  environmentRef: OnPrem
+  deploymentType: Kubernetes
+  type: KubernetesDirect
+  spec:
+    connectorRef: labk8sconnector
+    namespace: gowri
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+  allowSimultaneousDeployments: false
