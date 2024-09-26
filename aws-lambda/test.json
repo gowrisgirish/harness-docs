@@ -1,0 +1,4 @@
+{
+  "runtime": "nodejs16.x",
+  "role": "arn:aws:iam::915632791698:role/service-role/demo-lambda-role-dricdqtc"
+}
