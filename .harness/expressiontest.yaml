@@ -21,5 +21,4 @@ pipeline:
                     duration: 10m
         tags: {}
         when:
-          pipelineStatus: Success
           condition: <+pipeline.variables.safetodanceEnabled>=="true"
