@@ -1,0 +1,19 @@
+inputSet:
+  name: input-2
+  identifier: input2
+  orgIdentifier: Customer_Experience
+  projectIdentifier: Labs
+  pipeline:
+    identifier: inputsetfromremote
+    stages:
+      - stage:
+          identifier: testing
+          type: Custom
+          spec:
+            execution:
+              steps:
+                - step:
+                    identifier: Wait_1
+                    type: Wait
+                    spec:
+                      duration: "2"
