@@ -19,6 +19,9 @@ pipeline:
                   identifier: Wait_1
                   spec:
                     duration: 10m
+          environment:
+            environmentRef: test
+            deployToAll: false
         tags: {}
         when:
           pipelineStatus: Success
