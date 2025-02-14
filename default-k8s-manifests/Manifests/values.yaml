@@ -4,7 +4,7 @@ imagepath1: index.docker.io/<+artifacts.primary.imagePath>
 imagepath: <+artifacts.primary.imagePath>
 tag: <+artifacts.primary.tag>
 env:
-    env: "<+stage.variables.date>"
+    # env: "<+stage.variables.date>"
     CLOUDABILITY_IMAGE: "<+artifacts.primary.image>"
     CLOUDABILITY_API_KEY: '<+secrets.getValue("docker_pat")>' #Gzh5K9lsnVaTUgNkPbitg8XX22aiFdHzz3HQ1iM3
     CLOUDABILITY_CLUSTER_NAME: "<+infra.namespace>"
