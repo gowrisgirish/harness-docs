@@ -1,6 +1,6 @@
 pipeline:
-  name: pipeline-from-github
-  identifier: pipelinefromgithub
+  name: pipeline_from_github
+  identifier: pipeline_from_github
   projectIdentifier: Labs
   orgIdentifier: Customer_Experience
   tags: {}
