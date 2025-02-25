@@ -1,0 +1,126 @@
+pipeline:
+  name: tf_for_k8s_microservice_apply_or_destroy
+  identifier: tf_for_k8s_microservice_apply_or_destroy
+  projectIdentifier: Labs
+  orgIdentifier: Customer_Experience
+  tags:
+    deployment: ""
+    terraform: ""
+    terraform-managed: ""
+  template:
+    templateRef: account.tf_for_k8s_microservice
+    templateInputs:
+      stages:
+        - stage:
+            identifier: apply
+            template:
+              templateInputs:
+                type: Deployment
+                spec:
+                  service:
+                    serviceRef: <+input>
+                    serviceInputs: <+input>
+                  environment:
+                    environmentRef: <+input>
+                    environmentInputs: <+input>
+                    serviceOverrideInputs: <+input>
+                    infrastructureDefinitions: <+input>
+                  execution:
+                    steps:
+                      - step:
+                          identifier: service_now_approval_for_prod_deploy_stage_by_env
+                          template:
+                            templateInputs:
+                              type: ServiceNowApproval
+                              spec:
+                                ticketNumber: <+pipeline.variables.snow_ticket_id>
+                      - step:
+                          identifier: Terraform_Plan
+                          type: TerraformPlan
+                          spec:
+                            configuration:
+                              configFiles:
+                                store:
+                                  type: Github
+                                  spec:
+                                    connectorRef: account.dnd_engineering_enterprise_github_connector
+                              varFiles:
+                                - varFile:
+                                    identifier: inline inputs
+                                    type: Inline
+                                    spec:
+                                      content: <+input>
+                      - step:
+                          identifier: Approve_Terraform_Apply
+                          type: HarnessApproval
+                          spec:
+                            approvers:
+                              userGroups:
+                                - account._account_all_users
+                              minimumCount: <+input>.default(1)
+                variables:
+                  - name: TF_TIMEOUT
+                    type: String
+                    value: <+input>.default(1h).regex(\d+[d|h|m])
+        - stage:
+            identifier: destroy
+            template:
+              templateInputs:
+                type: Deployment
+                spec:
+                  execution:
+                    steps:
+                      - step:
+                          identifier: Terraform_Plan
+                          type: TerraformPlan
+                          spec:
+                            configuration:
+                              configFiles:
+                                store:
+                                  type: Github
+                                  spec:
+                                    connectorRef: account.dnd_engineering_enterprise_github_connector
+                              varFiles:
+                                - varFile:
+                                    identifier: inline inputs
+                                    type: Inline
+                                    spec:
+                                      content: <+input>
+                      - step:
+                          identifier: Approve_Terraform_Destroy
+                          type: HarnessApproval
+                          spec:
+                            approvers:
+                              userGroups:
+                                - account._account_all_users
+                              minimumCount: <+input>.default(1)
+                variables:
+                  - name: TF_TIMEOUT
+                    type: String
+                    value: <+input>.default(1h).regex(\d+[d|h|m])
+      variables:
+        - name: tf_action
+          type: String
+          value: <+input>.default(apply).allowedValues(apply,destroy)
+        - name: github_repo_name
+          type: String
+          value: <+service.name>-infra
+        - name: repo_branch_name
+          type: String
+          value: <+input>.default(main)
+        - name: tf_aws_state_file_key
+          type: String
+          value: <+service.name>-<+env.name>
+        - name: tf_directory_path
+          type: String
+          value: <+env.name>
+        - name: checkov_export_aws_s3_bucket_name
+          type: String
+          value: <+input>.default(s3-us-east-2-prod-checkovoutput-o1hwm)
+        - name: tf_log
+          type: String
+          value: <+input>.default(ERROR).allowedValues(TRACE,DEBUG,INFO,WARN,ERROR)
+        - name: snow_ticket_id
+          type: String
+          description: Please update to a valid ServiceNow ticket number when you deploy to production
+          value: <+input>.default(CHG)
