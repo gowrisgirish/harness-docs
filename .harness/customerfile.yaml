@@ -1,8 +1,8 @@
 pipeline:
   name: tf_for_k8s_microservice_apply_or_destroy
   identifier: tf_for_k8s_microservice_apply_or_destroy
-  projectIdentifier: Labs
-  orgIdentifier: Customer_Experience
+  projectIdentifier: edp_affiliate
+  orgIdentifier: dnd_engineering
   tags:
     deployment: ""
     terraform: ""
