@@ -27,3 +27,16 @@ spec:
     protocol: TCP
   selector:
     app: nginx
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: some-service
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8082
+    targetPort: 80
+    protocol: TCP
+  selector:
+    app: nginx
